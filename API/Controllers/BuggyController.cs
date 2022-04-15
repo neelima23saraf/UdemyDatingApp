@@ -13,7 +13,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BuggyController : Controller
+    public class BuggyController : ControllerBase
     {
         private readonly DataContext _context;
 
