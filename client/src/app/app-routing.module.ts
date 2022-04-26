@@ -13,22 +13,23 @@ import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChangesGuard } from './_guards/prevent-unsaved-changes.guard';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: '',
-  runGuardsAndResolvers: 'always',
-  canActivate: [AuthGuard],
-  children:[
-  {path: 'members', component: MemberListComponent},
-  {path: 'members/:username', component: MemberDetailComponent},
-  {path: 'member/edit', component: MemberEditComponent, canDeactivate:[PreventUnsavedChangesGuard]},
-  {path: 'lists', component: ListsComponent},
-  {path: 'messages', component: MessagesComponent},
-  ]
+  { path: '', component: HomeComponent },
+  {
+    path: '',
+    runGuardsAndResolvers: 'always',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'members', component: MemberListComponent },
+      { path: 'members/:username', component: MemberDetailComponent },
+      { path: 'member/edit', component: MemberEditComponent, canDeactivate: [PreventUnsavedChangesGuard] },
+      { path: 'lists', component: ListsComponent },
+      { path: 'messages', component: MessagesComponent },
+    ]
   },
-  {path:'errors', component: TestErrorsComponent},
-  {path: 'not-found', component:NotFoundComponent},
-  {path: 'server-error', component:ServerErrorComponent},
-  {path: '**', component: HomeComponent, pathMatch: 'full'},
+  { path: 'errors', component: TestErrorsComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: 'server-error', component: ServerErrorComponent },
+  { path: '**', component: HomeComponent, pathMatch: 'full' },
 ];
 
 @NgModule({

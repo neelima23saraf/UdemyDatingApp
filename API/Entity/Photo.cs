@@ -9,7 +9,7 @@ namespace API.Entity
         public string Url { get; set; }
         public bool IsMain { get; set; }
         public string PublicId { get; set; }
-//fully define relationtionship with AppUser
+        //fully define relationtionship with AppUser
         public AppUser AppUser { get; set; }
         public int AppUserId { get; set; }
     }
