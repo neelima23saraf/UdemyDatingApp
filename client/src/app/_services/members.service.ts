@@ -80,4 +80,12 @@ export class MembersService {
     params = params.append('PageSize', pageSize.toString());
     return params;
   }
+
+  addLike(username: string) {
+    return this.http.post(this.baseUrl + 'likes/' + username, {});
+  }
+
+  getLikes(predicate: string){
+    return this.http.get(this.baseUrl + 'likes?=' + predicate);
+  }
 }
